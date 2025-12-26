@@ -1,0 +1,16 @@
+{
+    "schemaVersion": 1,
+    "project": {
+        "name": "nexanon",
+        "schemaName": "nexanon"
+    },
+    "brave": {
+        "path": "D:\\brave\\src\\brave",
+        "version": "1.87.3"
+    },
+    "features": {
+        "enableLeoAi": false,
+        "enableBraveVpn": false,
+        "enableBraveTalk": false
+    }
+}
