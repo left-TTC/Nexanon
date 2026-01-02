@@ -5,6 +5,7 @@ export interface Config {
     project: {
         name: string;
         schemaName: string;
+        company: string,
     };
 
     brave: {

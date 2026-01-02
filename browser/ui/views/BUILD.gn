@@ -1,0 +1,33 @@
+# Copyright (c) 2025 The Brave Authors. All rights reserved.
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this file,
+# You can obtain one at https://mozilla.org/MPL/2.0/.
+
+import("//brave/build/nexanon_feature.gni")
+
+config("enable_talk_check_config") {
+    if (nexanon_enable_brave_talk) {
+        defines = [ "ENABLE_TALK_CHECK" ]
+    }
+}
+
+source_set("layout_provider") {
+  sources = [
+    "brave_layout_provider.cc",
+    "brave_layout_provider.h",
+  ]
+
+  if (is_mac) {
+    sources += [
+      "brave_layout_provider_mac.h",
+      "brave_layout_provider_mac.mm",
+    ]
+  }
+
+  deps = [
+    "//base",
+    "//ui/views",
+  ]
+
+  configs += [ ":enable_talk_check_config" ]
+}

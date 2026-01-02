@@ -1,6 +1,7 @@
 
 import * as readline from "readline";
 
+import chalk from "chalk";
 
 export function prompt(question: string): Promise<string> {
     const rl = readline.createInterface({
@@ -8,8 +9,10 @@ export function prompt(question: string): Promise<string> {
         output: process.stdout
     });
 
+    const coloredQuestion = chalk.cyan(question);
+
     return new Promise(resolve => {
-        rl.question(question, answer => {
+        rl.question(coloredQuestion, answer => {
         rl.close();
             resolve(answer.trim());
         });

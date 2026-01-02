@@ -17,7 +17,7 @@ declare_args() {
   sparkle_eddsa_private_key = ""
   sparkle_eddsa_public_key = ""
 
-  brave_product_name = "nexus"
+  brave_product_name = "nexanon"
   brave_exe = ""
   brave_version_major = ""
   brave_version_minor = ""
@@ -42,9 +42,6 @@ declare_args() {
   # overrides with empty ones to make //base buildable for redirect_cc.
   android_aab_to_apk = false
 
-  nexanon_enable_brave_rewards = false
-  nexanon_enable_brave_VPN = false
-  nexanon_enable_brave_leo = false
 }
 
 if (target_os == "win") {
