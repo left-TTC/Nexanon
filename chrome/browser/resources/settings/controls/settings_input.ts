@@ -95,9 +95,7 @@ export class SettingsInputElement extends SettingsInputElementBase {
             return;
         }
 
-        // 简单的校验：如果值没变，就不发送
         if (this.bindingValue_ !== this.pref.value) {
-            // 写入 Pref。由于是 String Pref，直接设置即可。
             this.set('pref.value', this.bindingValue_);
             
             // 发送标准的 settings 事件，方便父组件监听（如果需要）

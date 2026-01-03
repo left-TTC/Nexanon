@@ -42,10 +42,13 @@ inline constexpr char kWnsResolveMethod[] =
     "brave.wns.resolve_method";
 
 inline constexpr char kWnsResolveMethodGateWay[] =
-    "brave.wns.method_gateWay";
+    "brave.wns.method_gateway";
 
 inline constexpr char kWnsResolveRootNamesMethod[] =
     "brave.wns.rootNames";
+
+inline constexpr char kWnsRpcResolveWay[] =
+    "brave.wns.rpc_gateway";
 
 }  // namespace decentralized_dns
 

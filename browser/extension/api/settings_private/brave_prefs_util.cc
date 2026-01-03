@@ -307,6 +307,8 @@ const PrefsUtil::TypedPrefMap& BravePrefsUtil::GetAllowlistedKeys() {
         settings_api::PrefType::kNumber;
     (*s_brave_allowlist)[decentralized_dns::kWnsResolveMethodGateWay] =
         settings_api::PrefType::kString;
+    (*s_brave_allowlist)[decentralized_dns::kWnsRpcResolveWay] =
+        settings_api::PrefType::kString;
 
   // Media router pref
   (*s_brave_allowlist)[kEnableMediaRouterOnRestart] =

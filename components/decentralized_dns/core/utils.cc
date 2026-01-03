@@ -37,6 +37,8 @@ void RegisterLocalStatePrefs(PrefRegistrySimple* registry) {
 
     registry->RegisterListPref(kWnsResolveRootNamesMethod);
 
+    registry->RegisterStringPref(kWnsRpcResolveWay, "https://api.devnet.solana.com");
+
   // Register prefs for migration.
   // Added 12/2023 to reset SNS pref to re-opt in with updated interstitial.
   registry->RegisterBooleanPref(kSnsResolveMethodMigrated, false);
@@ -221,6 +223,10 @@ void SetWnsRootNames(PrefService* local_state,
     local_state->SetList(kWnsResolveRootNamesMethod, std::move(list));
 
     LOG(INFO) << "WnsRootNames fully reset with " << root_names.size() << " entries.";
+}
+
+std::string GetRpcGateWay(PrefService* local_state) {
+    return local_state->GetString(kWnsRpcResolveWay);
 }
 
 }  // namespace decentralized_dns

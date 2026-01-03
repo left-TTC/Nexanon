@@ -111,6 +111,8 @@ namespace Brave_web3_solana_task{
                 return;
             }
 
+            LOG(INFO) << "runtime ok here ";
+
             const std::vector<Solana_web3::Pubkey> roots = rootMap.get_all_pubkey();
             const Solana_web3::Pubkey this_root = roots[std::move(index)];
 

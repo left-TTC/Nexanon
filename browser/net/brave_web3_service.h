@@ -15,6 +15,9 @@
 #include "base/values.h"
 #include "base/functional/callback.h"
 #include "url/gurl.h"
+#include "chrome/browser/profiles/profile.h"
+#include "chrome/browser/browser_process.h"
+#include "brave/components/decentralized_dns/core/utils.h"
 
 #include "services/network/public/mojom/url_loader_factory.mojom.h"
 #include "services/network/public/cpp/shared_url_loader_factory.h"

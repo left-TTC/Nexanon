@@ -51,6 +51,8 @@ std::string GetIpfsGateWay(PrefService* local_state);
 std::vector<std::string> GetWnsRootNames(PrefService* local_state);
 void SetWnsRootNames(PrefService* local_state, const std::vector<std::string>& rootNames);
 
+std::string GetRpcGateWay(PrefService* local_state);
+
 }  // namespace decentralized_dns
 
 #endif  // BRAVE_COMPONENTS_DECENTRALIZED_DNS_CORE_UTILS_H_

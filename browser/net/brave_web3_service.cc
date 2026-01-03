@@ -9,7 +9,18 @@
 namespace Solana_web3{
 
     GURL RpcUrl() {
-        return GURL("https://api.devnet.solana.com");
+        PrefService* prefs = g_browser_process->local_state();
+
+        if(prefs){
+            std::string local_rpc =  decentralized_dns::GetRpcGateWay(prefs); 
+
+            LOG(INFO) << "FMC find rpc link from local" << local_rpc;
+
+            return GURL(local_rpc);
+        }else{
+            LOG(INFO) << "FMC no local root names";
+            return GURL("https://api.devnet.solana.com");
+        }
     }
 
 
@@ -334,7 +345,7 @@ namespace Solana_web3{
         for (size_t i = 0; i < vec.size(); ++i) {
             LOG(INFO) << "checking root: " << vec[i];LOG(INFO) << "checking root: " << vec[i].size();
             if (vec[i] == tld) {
-                LOG(INFO) << "比对成功" << vec[i];
+                LOG(INFO) << "success get root name: " << vec[i];
                 return std::make_tuple(static_cast<int>(i), true, name);
             }
         }
